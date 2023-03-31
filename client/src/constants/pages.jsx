@@ -5,6 +5,8 @@ import Checkout from '../pages/Checkout'
 import Dashboard from '../pages/Dashboard'
 import Payment from '../pages/Payment'
 import Signup from '../pages/Signup'
+import Signin from '../pages/Signin'
+import Notfound from '../pages/Notfound'
 
 export default {
     Home,
@@ -13,5 +15,7 @@ export default {
     Checkout,
     Dashboard,
     Payment,
-    Signup
+    Signup,
+    Signin,
+    Notfound
 }
