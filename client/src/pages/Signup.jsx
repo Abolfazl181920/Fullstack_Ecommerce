@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import useValidation from '../hooks/useValidation'
+import '../less/pages/signup.less'
 
 const Signup = () => {
 
@@ -15,12 +16,13 @@ const Signup = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">userName</label>
+    <div className='flex'>
+      <form className='signup__container' onSubmit={handleSubmit}>
       <input
         id="username"
         name="username"
         type="text"
+        className='input'
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.username}
@@ -29,11 +31,13 @@ const Signup = () => {
         <div>{formik.errors.username}</div>
       ) : null}
 
-      <label htmlFor="email">Email</label>
+      <br />
+
       <input
         id="email"
         name="email"
         type="email"
+        className='input'
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.email}
@@ -42,11 +46,13 @@ const Signup = () => {
         <div>{formik.errors.email}</div>
       ) : null}
 
-      <label htmlFor="password">Password</label>
+      <br />
+
       <input
         id="password"
         name="password"
         type="password"
+        className='input'
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.password}
@@ -55,11 +61,13 @@ const Signup = () => {
         <div>{formik.errors.password}</div>
       ) : null}
 
-      <label htmlFor="passwordconfirm">PasswordConfirm</label>
+      <br />
+
       <input
         id="passwordconfirm"
         name="passwordconfirm"
         type="password"
+        className='input'
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.passwordconfirm}
@@ -68,8 +76,11 @@ const Signup = () => {
         <div>{formik.errors.passwordconfirm}</div>
       ) : null}
 
+      <br />
+
       <button type="submit">Signup</button>
     </form>
+    </div>
   )
 }
 
