@@ -1,7 +1,7 @@
 import useValidation from '../hooks/useValidation'
 
 const Signup = () => {
-  const { formik } = useValidation({ email: '', password: '' })
+  const { formik } = useValidation({ email: '', password: '', username: '' })
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -14,6 +14,19 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="username">userName</label>
+      <input
+        id="username"
+        name="username"
+        type="text"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.username}
+      />
+      {formik.touched.username && formik.errors.username ? (
+        <div>{formik.errors.username}</div>
+      ) : null}
+
       <label htmlFor="email">Email</label>
       <input
         id="email"
@@ -40,7 +53,7 @@ const Signup = () => {
         <div>{formik.errors.password}</div>
       ) : null}
 
-      <button type="submit">Submit</button>
+      <button type="submit">Signup</button>
     </form>
   )
 }
