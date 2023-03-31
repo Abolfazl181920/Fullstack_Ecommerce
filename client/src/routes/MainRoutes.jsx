@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { page } from '../constants/index'
 
-const MainRoute = () => {
+const MainRoutes = () => {
   return (
     <Router>
         <Routes>
-            <Route element={ <page.Signin /> } path='/' />
+            <Route element={ <page.Home /> } path='/' />
             <Route element={ <page.Signup /> } path='/signup' />
             <Route element={ <page.Dashboard /> } path='/dashboard' />
             <Route element={ <page.Payment /> } path='/payment' />
@@ -18,4 +18,4 @@ const MainRoute = () => {
   )
 }
 
-export default MainRoute
+export default MainRoutes
