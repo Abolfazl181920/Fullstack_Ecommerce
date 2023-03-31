@@ -1,13 +1,16 @@
+import { useNavigate } from 'react-router-dom'
 import useValidation from '../hooks/useValidation'
 
 const Signup = () => {
   const { formik } = useValidation({ email: '', password: '', username: '' })
 
+  const redirect = useNavigate()
+  
   const handleSubmit = (event) => {
     event.preventDefault()
 
     if (formik.isValid) {
-      // Handle form submission
+      redirect("/dashboard")
       alert('s')
     }
   }
