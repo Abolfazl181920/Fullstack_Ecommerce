@@ -2,16 +2,15 @@ import { useNavigate } from 'react-router-dom'
 import useValidation from '../hooks/useValidation'
 
 const Signup = () => {
-  const { formik } = useValidation({ email: '', password: '', username: '' })
 
+  const { formik } = useValidation({ email: '', password: '', passwordconfirm: '', username: '' })
   const redirect = useNavigate()
-  
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
     if (formik.isValid) {
       redirect("/dashboard")
-      alert('s')
     }
   }
 
@@ -54,6 +53,19 @@ const Signup = () => {
       />
       {formik.touched.password && formik.errors.password ? (
         <div>{formik.errors.password}</div>
+      ) : null}
+
+      <label htmlFor="passwordconfirm">PasswordConfirm</label>
+      <input
+        id="passwordconfirm"
+        name="passwordconfirm"
+        type="password"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.passwordconfirm}
+      />
+      {formik.touched.passwordconfirm && formik.errors.passwordconfirm ? (
+        <div>{formik.errors.passwordconfirm}</div>
       ) : null}
 
       <button type="submit">Signup</button>
