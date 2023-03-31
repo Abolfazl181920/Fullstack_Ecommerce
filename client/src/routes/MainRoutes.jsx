@@ -5,8 +5,8 @@ const MainRoutes = () => {
   return (
     <Router>
         <Routes>
-            <Route element={ <page.Home /> } path='/' />
-            <Route element={ <page.Signup /> } path='/signup' />
+            <Route element={ <page.Signup /> } path='/' />
+            <Route element={ <page.Signin /> } path='/signin' />
             <Route element={ <page.Dashboard /> } path='/dashboard' />
             <Route element={ <page.Payment /> } path='/payment' />
             <Route element={ <page.Checkout /> } path='/checkout' />

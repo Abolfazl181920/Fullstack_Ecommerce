@@ -1,4 +1,3 @@
-import Home from '../pages/Home'
 import Address from '../pages/Address'
 import Bag from '../pages/Bag'
 import Checkout from '../pages/Checkout'
@@ -9,7 +8,6 @@ import Signin from '../pages/Signin'
 import Notfound from '../pages/Notfound'
 
 export default {
-    Home,
     Address,
     Bag,
     Checkout,
