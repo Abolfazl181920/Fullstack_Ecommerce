@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import '../less/pages/signup.less'
@@ -64,6 +64,7 @@ const Signup = () => {
               <ErrorMessage name="confirmPassword" component="div" className="error-message" />
             </div>
 
+            <span>Do you already have an account? <Link to='/signin'>Signin</Link> </span>
             <button type="submit" className="signup__btn" disabled={isSubmitting}>
               Signup
             </button>
