@@ -1,11 +1,28 @@
+import { useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import axios from 'axios'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import '../less/pages/signup.less'
 
 const Signup = () => {
 
+  const [ newUser, setNewUser ] = useState({
+    username: 'RezaPahlavi',
+    email: 'RezaPahlavi@gmail.com',
+    password: '123456789'
+  })
+
   const navigate = useNavigate()
+
+  // useEffect(() => {
+  //   axios.post(`http://localhost:3001/signup`, newUser).then(response => {
+  //     console.log(response.data)
+  //   })
+  //   .catch(error => {
+  //     console.log(error.response.data)
+  //   })
+  // })
 
   return (
     <div className='container'>

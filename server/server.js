@@ -8,11 +8,11 @@ const {
     errorHandler,
     jsonMW
 } = require("./middleware/index")
-const { home, getProducts, postProduct } = require("./routers/index")
+const { home, getProducts, postProduct, getUser } = require("./routers/index")
 
 app.use(corsMW)
 app.use(jsonMW)
-app.use(home, getProducts, postProduct)
+app.use(home, getProducts, postProduct, getUser)
 
 app.use(errorHandler)
 
